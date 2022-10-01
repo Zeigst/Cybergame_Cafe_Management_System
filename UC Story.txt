@@ -8,7 +8,8 @@ B use his admin_account to create a new account with username "abc" and password
 --System now has an account belongs to A: abc - xyz with 0 VND--
 
 A pay B 100.000VND to recharge his account.
-B receive the money, record the transaction then change the money of A's account to 100.000 VND.
+B receive the money then change the money of A's account to 100.000 VND.
+System record the transaction.
 
 --System now has an account belongs to A: abc - xyz with 100.000 VND--
 
@@ -18,7 +19,8 @@ A timer and a money meter start to countdown as A use the computer. (5h = 100.00
 When the timer reach 10min mark, the system notify A.
 A log out and go to B. A's account's timer stopped.
 A pay B 10.000 VND more to recharge his account.
-B receive the money, record the transaction then change the money of A's account to have 10.000 VND more.
+B receive the money then change the money of A's account to have 10.000 VND more.
+System record the transaction.
 A's account's timer increased by the appopriate amount of 10.000 VND
 
 --System now has an account belongs to A: abc - xyz with 10.000 VND more--
@@ -46,4 +48,32 @@ The system proccess A's order.
     - If B is unable to proccess A's order (out of stock, etc...):
         B send A a notification through his account and refund the money to A's account
     - If B is able to proccess A's order:
-        B prepare and complete A's order. Then record the transaction.
+        B prepare and complete A's order. 
+        System record the transaction.
+
+======================================================================
+
+Forgetful Customer:
+
+A log in using username "abd" and password "xyz"
+System check list of accounts for username "abd" => find non 
+System notify A that account does not exist.
+
+A log in using username "abc" and password "wyz"
+System check list of accounts for username "abd" => username found
+System check if password match => Non 
+System notify A that password does not match.
+
+======================================================================
+
+Leaving Customer:
+
+A contact B to take money out of his account.
+B use admin_account to remove money from A's account.
+System update A account.
+B give money to A.
+System record the transaction.
+
+A contact B to delete his account.
+B use admin_account to delete A's account.
+System record the action.
