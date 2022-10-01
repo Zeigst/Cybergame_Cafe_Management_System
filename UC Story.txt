@@ -1,0 +1,49 @@
+======================================================================
+
+New Customer:
+
+A(guest) enter the premise and contact B(admin) to creat a new user_account for A.
+B use his admin_account to create a new account with username "abc" and password "xyz" for A.
+
+--System now has an account belongs to A: abc - xyz with 0 VND--
+
+A pay B 100.000VND to recharge his account.
+B receive the money, record the transaction then change the money of A's account to 100.000 VND.
+
+--System now has an account belongs to A: abc - xyz with 100.000 VND--
+
+A log on to his account using the username and password he registered with B.
+A timer and a money meter start to countdown as A use the computer. (5h = 100.000 VND)
+
+When the timer reach 10min mark, the system notify A.
+A log out and go to B. A's account's timer stopped.
+A pay B 10.000 VND more to recharge his account.
+B receive the money, record the transaction then change the money of A's account to have 10.000 VND more.
+A's account's timer increased by the appopriate amount of 10.000 VND
+
+--System now has an account belongs to A: abc - xyz with 10.000 VND more--
+
+A log back on the computer. The timer start again.
+When the timer reach 10min mark, the system notify A.
+A ignore the timer. When it reach 0, the computer automatically log out.
+A tries to log in again, but is notified by the system that his account is out of money.
+
+======================================================================
+
+Hungry Customer:
+
+While using the computer, A feels hungry. A browse a menu to order some food.
+A select his order then commit them through to B.
+The system proccess A's order.
+- If the value of A's order is smaller than the amount of money A has left in his account:
+    It notifies A and dismiss A's order.
+- If the value of A's order is larger than the amount of money A has left in his account: 
+    The system record A's order.
+    It deplete the appopriate amount of money from A's account (at the same time reduce 
+    the timer meter) then send the order through to B's admin_account.
+
+    B receive A's order.
+    - If B is unable to proccess A's order (out of stock, etc...):
+        B send A a notification through his account and refund the money to A's account
+    - If B is able to proccess A's order:
+        B prepare and complete A's order. Then record the transaction.
