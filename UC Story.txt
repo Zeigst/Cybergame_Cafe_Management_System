@@ -32,27 +32,6 @@ A tries to log in again, but is notified by the system that his account is out o
 
 ======================================================================
 
-Hungry Customer:
-
-While using the computer, A feels hungry. A browse a menu to order some food.
-A select his order then commit them through to B.
-The system proccess A's order.
-- If the value of A's order is smaller than the amount of money A has left in his account:
-    It notifies A and dismiss A's order.
-- If the value of A's order is larger than the amount of money A has left in his account: 
-    The system record A's order.
-    It deplete the appopriate amount of money from A's account (at the same time reduce 
-    the timer meter) then send the order through to B's admin_account.
-
-    B receive A's order.
-    - If B is unable to proccess A's order (out of stock, etc...):
-        B send A a notification through his account and refund the money to A's account
-    - If B is able to proccess A's order:
-        B prepare and complete A's order. 
-        System record the transaction.
-
-======================================================================
-
 Forgetful Customer:
 
 A log in using username "abd" and password "xyz"
